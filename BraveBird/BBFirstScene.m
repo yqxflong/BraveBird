@@ -13,7 +13,9 @@
 //
 //
 //
-static const float race_player=30;
+static const float g=150.0f;
+static float race_down=0;
+static float race_up=200.0f;
 static BOOL keepDown=YES;
 
 @implementation BBFirstScene
@@ -53,8 +55,8 @@ static BOOL keepDown=YES;
     CGPoint po_player=player.position;
     CGSize sz_player=player.texture.contentSize;
     //
-    if (po_player.y<WINSIZE.height-sz_player.height/2-race_player) {
-        po_player.y+=race_player;
+    if (po_player.y<WINSIZE.height-sz_player.height/2-race_up*delta) {
+        po_player.y+=race_up*delta;
     }else{
         po_player.y=WINSIZE.height-sz_player.height/2;
     }
@@ -71,9 +73,11 @@ static BOOL keepDown=YES;
     CGPoint po_player=player.position;
     CGSize sz_player=player.texture.contentSize;
     //
-    if (po_player.y>sz_player.height/2+race_player) {
-        po_player.y-=race_player;
+    if (po_player.y>sz_player.height/2+race_down*delta) {
+        race_down+=g*delta;
+        po_player.y-=race_down*delta;
     }else{
+        race_down=0;
         po_player.y=sz_player.height/2;
     }
     [player stopAllActions];
@@ -101,12 +105,14 @@ static BOOL keepDown=YES;
 -(void)ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
     CCLOG(@"touch end");
     keepDown=YES;
+    race_down=0;
     [self unschedule:@selector(keepPlayerFly:)];
 }
 //
 -(void)ccTouchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event{
     CCLOG(@"touch cancel");
     keepDown=YES;
+    race_down=0;
     [self unschedule:@selector(keepPlayerFly:)];
 }
 
