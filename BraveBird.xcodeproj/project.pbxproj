@@ -131,8 +131,8 @@
 		B53BEA641637C182002C4F36 /* vec4.c in Sources */ = {isa = PBXBuildFile; fileRef = B53BEA631637C182002C4F36 /* vec4.c */; };
 		B53BEA691637C182002C4F36 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B53BEA681637C182002C4F36 /* main.m */; };
 		B53BEA6C1637C182002C4F36 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B53BEA6B1637C182002C4F36 /* AppDelegate.m */; };
-		B53BEA6F1637C182002C4F36 /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B53BEA6E1637C182002C4F36 /* HelloWorldLayer.m */; };
-		B53BEA721637C182002C4F36 /* IntroLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B53BEA711637C182002C4F36 /* IntroLayer.m */; };
+		B53BEA7F1637C225002C4F36 /* MainScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = B53BEA7E1637C225002C4F36 /* MainScreen.m */; };
+		B53BEA821637C2B6002C4F36 /* BBFirstScene.m in Sources */ = {isa = PBXBuildFile; fileRef = B53BEA811637C2B6002C4F36 /* BBFirstScene.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -394,10 +394,11 @@
 		B53BEA681637C182002C4F36 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B53BEA6A1637C182002C4F36 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B53BEA6B1637C182002C4F36 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		B53BEA6D1637C182002C4F36 /* HelloWorldLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelloWorldLayer.h; sourceTree = "<group>"; };
-		B53BEA6E1637C182002C4F36 /* HelloWorldLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloWorldLayer.m; sourceTree = "<group>"; };
-		B53BEA701637C182002C4F36 /* IntroLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IntroLayer.h; sourceTree = "<group>"; };
-		B53BEA711637C182002C4F36 /* IntroLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IntroLayer.m; sourceTree = "<group>"; };
+		B53BEA7C1637C1E3002C4F36 /* config_Text.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = config_Text.h; sourceTree = "<group>"; };
+		B53BEA7D1637C225002C4F36 /* MainScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainScreen.h; sourceTree = "<group>"; };
+		B53BEA7E1637C225002C4F36 /* MainScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainScreen.m; sourceTree = "<group>"; };
+		B53BEA801637C2B6002C4F36 /* BBFirstScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBFirstScene.h; sourceTree = "<group>"; };
+		B53BEA811637C2B6002C4F36 /* BBFirstScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBFirstScene.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -456,12 +457,13 @@
 		B53BE8F21637C180002C4F36 /* BraveBird */ = {
 			isa = PBXGroup;
 			children = (
+				B53BEA7C1637C1E3002C4F36 /* config_Text.h */,
 				B53BEA6A1637C182002C4F36 /* AppDelegate.h */,
 				B53BEA6B1637C182002C4F36 /* AppDelegate.m */,
-				B53BEA6D1637C182002C4F36 /* HelloWorldLayer.h */,
-				B53BEA6E1637C182002C4F36 /* HelloWorldLayer.m */,
-				B53BEA701637C182002C4F36 /* IntroLayer.h */,
-				B53BEA711637C182002C4F36 /* IntroLayer.m */,
+				B53BEA7D1637C225002C4F36 /* MainScreen.h */,
+				B53BEA7E1637C225002C4F36 /* MainScreen.m */,
+				B53BEA801637C2B6002C4F36 /* BBFirstScene.h */,
+				B53BEA811637C2B6002C4F36 /* BBFirstScene.m */,
 				B53BE8F31637C180002C4F36 /* Resources */,
 				B53BE90D1637C180002C4F36 /* libs */,
 				B53BEA661637C182002C4F36 /* Supporting Files */,
@@ -1007,8 +1009,8 @@
 				B53BEA641637C182002C4F36 /* vec4.c in Sources */,
 				B53BEA691637C182002C4F36 /* main.m in Sources */,
 				B53BEA6C1637C182002C4F36 /* AppDelegate.m in Sources */,
-				B53BEA6F1637C182002C4F36 /* HelloWorldLayer.m in Sources */,
-				B53BEA721637C182002C4F36 /* IntroLayer.m in Sources */,
+				B53BEA7F1637C225002C4F36 /* MainScreen.m in Sources */,
+				B53BEA821637C2B6002C4F36 /* BBFirstScene.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1065,6 +1067,7 @@
 				GCC_PREFIX_HEADER = BraveBird/Prefix.pch;
 				HEADER_SEARCH_PATHS = "\"BraveBird/libs/kazmath/include\"";
 				INFOPLIST_FILE = BraveBird/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = (
 					"-lz",
 					"-ObjC",
@@ -1083,6 +1086,7 @@
 				GCC_PREFIX_HEADER = BraveBird/Prefix.pch;
 				HEADER_SEARCH_PATHS = "\"BraveBird/libs/kazmath/include\"";
 				INFOPLIST_FILE = BraveBird/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = (
 					"-lz",
 					"-ObjC",
