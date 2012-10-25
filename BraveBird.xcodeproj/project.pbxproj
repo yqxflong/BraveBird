@@ -134,6 +134,9 @@
 		B53BEA7F1637C225002C4F36 /* MainScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = B53BEA7E1637C225002C4F36 /* MainScreen.m */; };
 		B53BEA821637C2B6002C4F36 /* BBFirstScene.m in Sources */ = {isa = PBXBuildFile; fileRef = B53BEA811637C2B6002C4F36 /* BBFirstScene.m */; };
 		B53BEA8C1637F05C002C4F36 /* role-bird.png in Resources */ = {isa = PBXBuildFile; fileRef = B53BEA8B1637F05C002C4F36 /* role-bird.png */; };
+		B5A37A3016390789000A999F /* BBBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A37A2F16390789000A999F /* BBBackgroundView.m */; };
+		B5A37A3416390974000A999F /* bg-far.png in Resources */ = {isa = PBXBuildFile; fileRef = B5A37A3216390974000A999F /* bg-far.png */; };
+		B5A37A3516390974000A999F /* bg-near.png in Resources */ = {isa = PBXBuildFile; fileRef = B5A37A3316390974000A999F /* bg-near.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -401,6 +404,10 @@
 		B53BEA801637C2B6002C4F36 /* BBFirstScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBFirstScene.h; sourceTree = "<group>"; };
 		B53BEA811637C2B6002C4F36 /* BBFirstScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBFirstScene.m; sourceTree = "<group>"; };
 		B53BEA8B1637F05C002C4F36 /* role-bird.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "role-bird.png"; path = "Resources/role-bird.png"; sourceTree = "<group>"; };
+		B5A37A2E16390788000A999F /* BBBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBBackgroundView.h; sourceTree = "<group>"; };
+		B5A37A2F16390789000A999F /* BBBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBBackgroundView.m; sourceTree = "<group>"; };
+		B5A37A3216390974000A999F /* bg-far.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bg-far.png"; path = "Resources/bg-far.png"; sourceTree = "<group>"; };
+		B5A37A3316390974000A999F /* bg-near.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bg-near.png"; path = "Resources/bg-near.png"; sourceTree = "<group>"; };
 		B5A774BF16389DEE0042163D /* config_Fun.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = config_Fun.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -468,6 +475,8 @@
 				B53BEA7E1637C225002C4F36 /* MainScreen.m */,
 				B53BEA801637C2B6002C4F36 /* BBFirstScene.h */,
 				B53BEA811637C2B6002C4F36 /* BBFirstScene.m */,
+				B5A37A2E16390788000A999F /* BBBackgroundView.h */,
+				B5A37A2F16390789000A999F /* BBBackgroundView.m */,
 				B53BE8F31637C180002C4F36 /* Resources */,
 				B53BE90D1637C180002C4F36 /* libs */,
 				B53BEA661637C182002C4F36 /* Supporting Files */,
@@ -478,6 +487,8 @@
 		B53BE8F31637C180002C4F36 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B5A37A3216390974000A999F /* bg-far.png */,
+				B5A37A3316390974000A999F /* bg-near.png */,
 				B53BEA8B1637F05C002C4F36 /* role-bird.png */,
 				B53BE8F41637C180002C4F36 /* Default.png */,
 				B53BE8F61637C180002C4F36 /* Default-Landscape~ipad.png */,
@@ -903,6 +914,8 @@
 				B53BE90C1637C180002C4F36 /* iTunesArtwork in Resources */,
 				B53BEA4A1637C181002C4F36 /* ChangeLog in Resources */,
 				B53BEA8C1637F05C002C4F36 /* role-bird.png in Resources */,
+				B5A37A3416390974000A999F /* bg-far.png in Resources */,
+				B5A37A3516390974000A999F /* bg-near.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1017,6 +1030,7 @@
 				B53BEA6C1637C182002C4F36 /* AppDelegate.m in Sources */,
 				B53BEA7F1637C225002C4F36 /* MainScreen.m in Sources */,
 				B53BEA821637C2B6002C4F36 /* BBFirstScene.m in Sources */,
+				B5A37A3016390789000A999F /* BBBackgroundView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
