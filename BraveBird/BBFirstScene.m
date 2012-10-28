@@ -23,7 +23,7 @@
 static const float a_f=500.0f;//a for up
 static const float g=300.0f;//a for down
 //
-static float dis_forward=60;
+static float dis_forward=20;
 static float race_down=40;
 static float race_up=60;
 static BOOL keepDown=YES;
@@ -47,9 +47,11 @@ static BOOL keepDown=YES;
 //
 -(void)initBackgroundView{
     BBBackgroundView *near=[BBBackgroundView spriteWithFile:PIC_NEARBG];
+    [near setColor:ccBLACK];
     [self addChild:near z:-1 tag:TAG_NEARBG];
     //
     BBBackgroundView *far=[BBBackgroundView spriteWithFile:PIC_FARBG];
+    [far setColor:ccBLACK];
     [self addChild:far z:-1 tag:TAG_FARBG];
     //
     CGPoint po_near=CGPointMake(WINSIZE.width/2,WINSIZE.height/2);
@@ -57,6 +59,8 @@ static BOOL keepDown=YES;
     CGPoint po_far=CGPointMake(WINSIZE.width+WINSIZE.width/2,WINSIZE.height/2);
     far.position=po_far;
     //
+    [near initMonsters];
+    [far initMonsters];
 }
 //
 -(void)initPlayer{
@@ -114,28 +118,49 @@ static BOOL keepDown=YES;
 }
 //keep bg view scroll all the time
 -(void)scrollBackgroundView:(ccTime)delta{
-    CCSprite *near=(CCSprite*)[self getChildByTag:TAG_NEARBG];
-    CCSprite *far=(CCSprite*)[self getChildByTag:TAG_FARBG];
+    BBBackgroundView *near=(BBBackgroundView*)[self getChildByTag:TAG_NEARBG];
+    BBBackgroundView *far=(BBBackgroundView*)[self getChildByTag:TAG_FARBG];
     //
     CGPoint po_near=near.position;
     CGPoint po_far=far.position;
     //check near bg
     po_near.x-=dis_forward;
     if (po_near.x<=-WINSIZE.width/2) {
+        [near refreshMonsters];
         po_near.x=WINSIZE.width*3/2;
     }
     //check far bg
     po_far.x-=dis_forward;
     if (po_far.x<=-WINSIZE.width/2) {
+        [far refreshMonsters];
         po_far.x=WINSIZE.width*3/2;
     }
     far.position=po_far;
     near.position=po_near;
 }
+//
+-(void)checkColision{
+    BBBackgroundView *near=(BBBackgroundView*)[self getChildByTag:TAG_NEARBG];
+    BBBackgroundView *far=(BBBackgroundView*)[self getChildByTag:TAG_FARBG];
+    //
+    CCSprite* player=(CCSprite*)[self getChildByTag:TAG_KEYROLE];
+    float pl_r=sqrtf(player.contentSize.width*player.contentSize.width+player.contentSize.height*player.contentSize.height);
+    float rest_near=0;
+    float rest_far=0;
+    if (near.position.x==WINSIZE.width*3/2) {
+        rest_near=WINSIZE.width;
+    }
+    if (far.position.x==WINSIZE.width*3/2) {
+        rest_far=WINSIZE.width;
+    }
+    [near checkColision:pl_r point:player.position autodis:dis_forward];
+    [far checkColision:pl_r point:player.position autodis:dis_forward];
+}
 //check any update all the time
 -(void)updateAllTheTime:(ccTime)delta{
     [self scrollBackgroundView:delta];
     [self keepPlayerDown:delta];
+    [self checkColision];
 }
 //
 //
