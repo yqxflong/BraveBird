@@ -12,5 +12,5 @@
 @interface Monster : CCSprite {
     
 }
--(void)checkColision:(float)pl_r point:(CGPoint)pl_p autodis:(float)ad rest:(float)rt;
+-(void)checkColision:(CCSprite*)player dis:(float)dis;
 @end

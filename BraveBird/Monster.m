@@ -11,19 +11,27 @@
 
 @implementation Monster
 //
--(void)checkColision:(float)pl_r point:(CGPoint)pl_p autodis:(float)ad rest:(float)rt{
+-(void)checkColision:(CCSprite*)player dis:(float)dis{
+    float pl_r=player.contentSize.height/2;
+    CGPoint pl_p=player.position;
     CGSize m_sz=self.contentSize;
-    float m_r=sqrtf(m_sz.width*m_sz.width+m_sz.height*m_sz.height);
+    float m_r=m_sz.height/2;
     float dis_limit=pl_r+m_r;
     //
     CGPoint m_p=self.position;
-    m_p.x-=ad;//real position
-    m_p.x+=rt;
+    m_p.x+=dis;//real position
     float dis_real=ccpDistance(m_p,pl_p);
     //
     if (dis_real<=dis_limit) {
-//        [[CCDirector sharedDirector]pause];
-        CCLOG(@"DIE!!!!!!!!!!!");
+        CCRotateBy *cr=[CCRotateBy actionWithDuration:0.5 angle:990.0];
+        CCMoveTo *cm=[CCMoveTo actionWithDuration:0.5 position:CGPointMake(pl_p.x+50,pl_r)];
+        CCSpawn *cp=[CCSpawn actions:cr,cm, nil];
+        CCCallFunc *ca=[CCCallFunc actionWithTarget:self selector:@selector(stopGame)];
+        [player runAction:[CCSequence actions:cp,ca, nil]];
     }
+}
+//
+-(void)stopGame{
+    [[CCDirector sharedDirector]pause];
 }
 @end

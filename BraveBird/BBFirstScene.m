@@ -14,6 +14,7 @@
 #define TAG_NEARBG              100
 #define TAG_FARBG               101
 #define TAG_KEYROLE             1
+#define TAG_SCOREBOARD          50
 //
 #define RATE_UPDATE             0.1f
 #define PLAYER_START_X          100
@@ -36,10 +37,12 @@ static BOOL keepDown=YES;
     return scene;
 }
 //
+#pragma mark---------Initialize
 -(id)init{
     if ((self=[super init])) {
         [self initBackgroundView];
         [self initPlayer];
+        [self initScoreBoard];
         self.isTouchEnabled=YES;
     }
     return self;
@@ -68,6 +71,13 @@ static BOOL keepDown=YES;
     CCSprite *player=[CCSprite spriteWithFile:PIC_PLAYER];
     [player setPosition:po_player];
     [self addChild:player z:0 tag:TAG_KEYROLE];
+}
+//
+-(void)initScoreBoard{
+    CCLabelTTF *sb=[CCLabelTTF labelWithString:@"0.0" dimensions:CGSizeMake(50, 50) hAlignment:kCCTextAlignmentCenter fontName:@"Marker Felt" fontSize:20];
+    sb.color=ccYELLOW;
+    sb.position=CGPointMake(WINSIZE.width-sb.contentSize.width/2,WINSIZE.height-sb.contentSize.height/2);
+    [self addChild:sb z:50 tag:TAG_SCOREBOARD];
 }
 //
 #pragma mark-------Enter or leave
@@ -144,7 +154,6 @@ static BOOL keepDown=YES;
     BBBackgroundView *far=(BBBackgroundView*)[self getChildByTag:TAG_FARBG];
     //
     CCSprite* player=(CCSprite*)[self getChildByTag:TAG_KEYROLE];
-    float pl_r=sqrtf(player.contentSize.width*player.contentSize.width+player.contentSize.height*player.contentSize.height);
     float rest_near=0;
     float rest_far=0;
     if (near.position.x==WINSIZE.width*3/2) {
@@ -153,16 +162,25 @@ static BOOL keepDown=YES;
     if (far.position.x==WINSIZE.width*3/2) {
         rest_far=WINSIZE.width;
     }
-    [near checkColision:pl_r point:player.position autodis:dis_forward];
-    [far checkColision:pl_r point:player.position autodis:dis_forward];
+    [near checkColision:player];
+    [far checkColision:player];
 }
 //check any update all the time
 -(void)updateAllTheTime:(ccTime)delta{
     [self scrollBackgroundView:delta];
     [self keepPlayerDown:delta];
     [self checkColision];
+    [self updateScore];
 }
 //
+-(void)updateScore{
+    CCNode *node=(CCNode*)[self getChildByTag:TAG_SCOREBOARD];
+    NSAssert([node isKindOfClass:[CCLabelTTF class]],@"not a label!!");
+    CCLabelTTF *sb=(CCLabelTTF*)node;
+    float curs=[sb.string floatValue];
+    curs+=0.1;
+    sb.string=[NSString stringWithFormat:@"%.1f",curs];
+}
 //
 #pragma mark---------Touch event
 -(void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{

@@ -14,5 +14,5 @@
 }
 -(void)initMonsters;
 -(void)refreshMonsters;
--(void)checkColision:(float)pl_r point:(CGPoint)pl_p autodis:(float)ad;
+-(void)checkColision:(CCSprite*)player;
 @end

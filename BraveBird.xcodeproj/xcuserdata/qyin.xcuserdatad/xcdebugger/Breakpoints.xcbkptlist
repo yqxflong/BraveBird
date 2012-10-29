@@ -4,16 +4,29 @@
    version = "1.0">
    <FileBreakpoints>
       <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "BraveBird/BBBackgroundView.m"
+         timestampString = "373241453.599435"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "45"
+         endingLineNumber = "45"
+         landmarkName = "-checkColision:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
          shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "BraveBird/Monster.m"
-         timestampString = "373146951.110469"
+         timestampString = "373246623.619001"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "26"
-         endingLineNumber = "26"
-         landmarkName = "-checkColision:point:autodis:rest:"
+         startingLineNumber = "35"
+         endingLineNumber = "35"
+         landmarkName = "-stopGame"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
