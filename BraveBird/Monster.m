@@ -7,7 +7,7 @@
 //
 
 #import "Monster.h"
-
+#import "BBGameOverScene.h"
 
 @implementation Monster
 //
@@ -26,12 +26,13 @@
         CCRotateBy *cr=[CCRotateBy actionWithDuration:0.5 angle:990.0];
         CCMoveTo *cm=[CCMoveTo actionWithDuration:0.5 position:CGPointMake(pl_p.x+50,pl_r)];
         CCSpawn *cp=[CCSpawn actions:cr,cm, nil];
-        CCCallFunc *ca=[CCCallFunc actionWithTarget:self selector:@selector(stopGame)];
-        [player runAction:[CCSequence actions:cp,ca, nil]];
+        CCCallBlock *ca=[CCCallBlock actionWithBlock:^(){
+            CCScene* go=[BBGameOverScene scene];
+            [[CCDirector sharedDirector]replaceScene:go];
+        }];
+        [player runAction:cp];
+        [player performSelector:@selector(runAction:) withObject:ca afterDelay:1];
     }
 }
 //
--(void)stopGame{
-    [[CCDirector sharedDirector]pause];
-}
 @end

@@ -11,6 +11,9 @@
 //
 #define MS_LB_TITLE     @"BRAVE BIRD"
 #define MS_ITEM_START   @"Start"
+#define MS_ITEM_AGAIN   @"Play Again"
 
-
+#define FS_LB_TITLE         40
+#define FS_ITEM_START       20
+//
 #endif

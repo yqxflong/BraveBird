@@ -5,6 +5,7 @@
 
 #import "BBFirstScene.h"
 #import "BBBackgroundView.h"
+
 //
 //
 #define PIC_NEARBG              @"bg-near.png"
@@ -179,6 +180,7 @@ static BOOL keepDown=YES;
     CCLabelTTF *sb=(CCLabelTTF*)node;
     float curs=[sb.string floatValue];
     curs+=0.1;
+    [BBPerference instance].score=curs;
     sb.string=[NSString stringWithFormat:@"%.1f",curs];
 }
 //

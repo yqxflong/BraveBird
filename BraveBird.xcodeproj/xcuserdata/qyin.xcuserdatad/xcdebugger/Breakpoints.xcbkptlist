@@ -17,16 +17,16 @@
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "BraveBird/Monster.m"
-         timestampString = "373246623.619001"
+         timestampString = "373298769.8353"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "35"
-         endingLineNumber = "35"
-         landmarkName = "-stopGame"
+         startingLineNumber = "30"
+         endingLineNumber = "30"
+         landmarkName = "-checkColision:dis:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

@@ -7,10 +7,6 @@
 #import "BBFirstScene.h"
 //
 //
-#define FS_LB_TITLE         40
-#define FS_ITEM_START       20
-
-
 @implementation MainScreen
 +(id)scene{
     CCScene *scene=[CCScene node];

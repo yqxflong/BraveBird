@@ -137,6 +137,8 @@
 		B5A37A3016390789000A999F /* BBBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A37A2F16390789000A999F /* BBBackgroundView.m */; };
 		B5A37A3416390974000A999F /* bg-far.png in Resources */ = {isa = PBXBuildFile; fileRef = B5A37A3216390974000A999F /* bg-far.png */; };
 		B5A37A3516390974000A999F /* bg-near.png in Resources */ = {isa = PBXBuildFile; fileRef = B5A37A3316390974000A999F /* bg-near.png */; };
+		B5B35B3B164010F20044AF8E /* BBGameOverScene.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B35B3A164010F20044AF8E /* BBGameOverScene.m */; };
+		B5B35B3E164013E50044AF8E /* BBPerference.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B35B3D164013E50044AF8E /* BBPerference.m */; };
 		B5D0D6EC163D8413001080EC /* monster.png in Resources */ = {isa = PBXBuildFile; fileRef = B5D0D6EB163D8413001080EC /* monster.png */; };
 		B5D0D6F0163D8587001080EC /* Monster.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D0D6EF163D8587001080EC /* Monster.m */; };
 /* End PBXBuildFile section */
@@ -411,6 +413,10 @@
 		B5A37A3216390974000A999F /* bg-far.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bg-far.png"; path = "Resources/bg-far.png"; sourceTree = "<group>"; };
 		B5A37A3316390974000A999F /* bg-near.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bg-near.png"; path = "Resources/bg-near.png"; sourceTree = "<group>"; };
 		B5A774BF16389DEE0042163D /* config_Fun.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = config_Fun.h; sourceTree = "<group>"; };
+		B5B35B39164010F20044AF8E /* BBGameOverScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBGameOverScene.h; sourceTree = "<group>"; };
+		B5B35B3A164010F20044AF8E /* BBGameOverScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBGameOverScene.m; sourceTree = "<group>"; };
+		B5B35B3C164013E40044AF8E /* BBPerference.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBPerference.h; sourceTree = "<group>"; };
+		B5B35B3D164013E50044AF8E /* BBPerference.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBPerference.m; sourceTree = "<group>"; };
 		B5D0D6EB163D8413001080EC /* monster.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = monster.png; path = Resources/monster.png; sourceTree = "<group>"; };
 		B5D0D6EE163D8587001080EC /* Monster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Monster.h; sourceTree = "<group>"; };
 		B5D0D6EF163D8587001080EC /* Monster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Monster.m; sourceTree = "<group>"; };
@@ -474,6 +480,8 @@
 			children = (
 				B5A774BF16389DEE0042163D /* config_Fun.h */,
 				B53BEA7C1637C1E3002C4F36 /* config_Text.h */,
+				B5B35B3C164013E40044AF8E /* BBPerference.h */,
+				B5B35B3D164013E50044AF8E /* BBPerference.m */,
 				B53BEA6A1637C182002C4F36 /* AppDelegate.h */,
 				B53BEA6B1637C182002C4F36 /* AppDelegate.m */,
 				B53BEA7D1637C225002C4F36 /* MainScreen.h */,
@@ -484,6 +492,8 @@
 				B5A37A2F16390789000A999F /* BBBackgroundView.m */,
 				B5D0D6EE163D8587001080EC /* Monster.h */,
 				B5D0D6EF163D8587001080EC /* Monster.m */,
+				B5B35B39164010F20044AF8E /* BBGameOverScene.h */,
+				B5B35B3A164010F20044AF8E /* BBGameOverScene.m */,
 				B53BE8F31637C180002C4F36 /* Resources */,
 				B53BE90D1637C180002C4F36 /* libs */,
 				B53BEA661637C182002C4F36 /* Supporting Files */,
@@ -1041,6 +1051,8 @@
 				B53BEA821637C2B6002C4F36 /* BBFirstScene.m in Sources */,
 				B5A37A3016390789000A999F /* BBBackgroundView.m in Sources */,
 				B5D0D6F0163D8587001080EC /* Monster.m in Sources */,
+				B5B35B3B164010F20044AF8E /* BBGameOverScene.m in Sources */,
+				B5B35B3E164013E50044AF8E /* BBPerference.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
