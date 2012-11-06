@@ -12,6 +12,10 @@
 #define PIC_MONSTER     @"monster.png"
 #define COUNT_MONSTER       2
 //
+@interface BBBackgroundView()
+-(CGPoint)getMonsterPoint:(CGSize)sz_m;
+@end
+//
 @implementation BBBackgroundView
 //
 -(void)initMonsters{
