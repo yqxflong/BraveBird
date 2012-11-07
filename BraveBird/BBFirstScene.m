@@ -148,6 +148,13 @@ static BOOL keepDown=YES;
     }
     far.position=po_far;
     near.position=po_near;
+    //
+    if (far.position.x==WINSIZE.width/2) {
+        [far resetBullet];
+    }
+    if (near.position.x==WINSIZE.width/2) {
+        [near resetBullet];
+    }
 }
 //
 -(void)checkColision{
@@ -166,6 +173,7 @@ static BOOL keepDown=YES;
     [near checkColision:player];
     [far checkColision:player];
 }
+//
 //check any update all the time
 -(void)updateAllTheTime:(ccTime)delta{
     [self scrollBackgroundView:delta];

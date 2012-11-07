@@ -15,5 +15,6 @@
 -(void)initMonsters;
 -(void)refreshMonsters;
 -(void)checkColision:(CCSprite*)player;
--(void)shotByHunter;
+-(void)initBullet;
+-(void)resetBullet;
 @end
