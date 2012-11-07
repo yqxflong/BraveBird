@@ -8,9 +8,13 @@
 
 #import "BBBackgroundView.h"
 #import "Monster.h"
+#import "BBHunter.h"
 //
 #define PIC_MONSTER     @"monster.png"
-#define COUNT_MONSTER       2
+#define PIC_HUNTER      @"hunter.png"
+#define COUNT_MONSTER       1
+//
+#define TAG_HUNTER      200
 //
 @interface BBBackgroundView()
 -(CGPoint)getMonsterPoint:(CGSize)sz_m;
@@ -18,12 +22,19 @@
 //
 @implementation BBBackgroundView
 //
+static CGRect hr;
 -(void)initMonsters{
+    //fly monster
     for (int i=0; i<COUNT_MONSTER;i++) {
         Monster *m=[Monster spriteWithFile:PIC_MONSTER];
         [self addChild:m z:1 tag:i];
     }
     [self refreshMonsters];
+    //hunter
+    BBHunter *h=[BBHunter spriteWithFile:PIC_HUNTER];
+    [h setPosition:CGPointMake(380,h.contentSize.height/2)];
+    [self addChild:h z:1 tag:TAG_HUNTER];
+    hr=h.boundingBox;
 }
 //
 -(void)refreshMonsters{
@@ -32,6 +43,10 @@
         NSAssert([node isKindOfClass:[Monster class]],@"not a monster!!");
         Monster *m=(Monster*)node;
         [m setPosition:[self getMonsterPoint:m.contentSize]];
+        //Check if cross
+//        while (CCRectIntersectsRect(hr,m.boundingBox)) {
+//            [m setPosition:[self getMonsterPoint:m.contentSize]];
+//        }
     }
 }
 //
@@ -42,6 +57,7 @@
 }
 //
 -(void)checkColision:(CCSprite*)player{
+    //check fly monster colision
     for (int i=0; i<COUNT_MONSTER;i++){
         CCNode *node=[self getChildByTag:i];
         NSAssert([node isKindOfClass:[Monster class]],@"not a monster!!");
@@ -49,5 +65,17 @@
         float dis=self.position.x-WINSIZE.width/2;
         [m checkColision:player dis:dis];
     }
+    //check hunter colision
+    CCNode *node=[self getChildByTag:TAG_HUNTER];
+    NSAssert([node isKindOfClass:[BBHunter class]],@"not a hunter!!");
+    BBHunter *m=(BBHunter*)node;
+    float dis=self.position.x-WINSIZE.width/2;
+    [m checkColision:player dis:dis];
+    //move bullet and check colision
+    
+}
+//
+-(void)shotByHunter{
+    //hunter emit bullet
 }
 @end

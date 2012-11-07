@@ -141,6 +141,9 @@
 		B5B35B3E164013E50044AF8E /* BBPerference.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B35B3D164013E50044AF8E /* BBPerference.m */; };
 		B5D0D6EC163D8413001080EC /* monster.png in Resources */ = {isa = PBXBuildFile; fileRef = B5D0D6EB163D8413001080EC /* monster.png */; };
 		B5D0D6F0163D8587001080EC /* Monster.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D0D6EF163D8587001080EC /* Monster.m */; };
+		B5F55DA2164A48DE0095AEA2 /* hunter.png in Resources */ = {isa = PBXBuildFile; fileRef = B5F55DA1164A48DE0095AEA2 /* hunter.png */; };
+		B5F55DA6164A49850095AEA2 /* BBHunter.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F55DA5164A49850095AEA2 /* BBHunter.m */; };
+		B5F55DA8164A56A40095AEA2 /* bullet.png in Resources */ = {isa = PBXBuildFile; fileRef = B5F55DA7164A56A40095AEA2 /* bullet.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -420,6 +423,10 @@
 		B5D0D6EB163D8413001080EC /* monster.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = monster.png; path = Resources/monster.png; sourceTree = "<group>"; };
 		B5D0D6EE163D8587001080EC /* Monster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Monster.h; sourceTree = "<group>"; };
 		B5D0D6EF163D8587001080EC /* Monster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Monster.m; sourceTree = "<group>"; };
+		B5F55DA1164A48DE0095AEA2 /* hunter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = hunter.png; path = Resources/hunter.png; sourceTree = "<group>"; };
+		B5F55DA4164A49850095AEA2 /* BBHunter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBHunter.h; sourceTree = "<group>"; };
+		B5F55DA5164A49850095AEA2 /* BBHunter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBHunter.m; sourceTree = "<group>"; };
+		B5F55DA7164A56A40095AEA2 /* bullet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bullet.png; path = Resources/bullet.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -478,6 +485,7 @@
 		B53BE8F21637C180002C4F36 /* BraveBird */ = {
 			isa = PBXGroup;
 			children = (
+				B5F55DA3164A49650095AEA2 /* Monster */,
 				B5A774BF16389DEE0042163D /* config_Fun.h */,
 				B53BEA7C1637C1E3002C4F36 /* config_Text.h */,
 				B5B35B3C164013E40044AF8E /* BBPerference.h */,
@@ -490,8 +498,6 @@
 				B53BEA811637C2B6002C4F36 /* BBFirstScene.m */,
 				B5A37A2E16390788000A999F /* BBBackgroundView.h */,
 				B5A37A2F16390789000A999F /* BBBackgroundView.m */,
-				B5D0D6EE163D8587001080EC /* Monster.h */,
-				B5D0D6EF163D8587001080EC /* Monster.m */,
 				B5B35B39164010F20044AF8E /* BBGameOverScene.h */,
 				B5B35B3A164010F20044AF8E /* BBGameOverScene.m */,
 				B53BE8F31637C180002C4F36 /* Resources */,
@@ -504,6 +510,8 @@
 		B53BE8F31637C180002C4F36 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B5F55DA7164A56A40095AEA2 /* bullet.png */,
+				B5F55DA1164A48DE0095AEA2 /* hunter.png */,
 				B5D0D6EB163D8413001080EC /* monster.png */,
 				B5A37A3216390974000A999F /* bg-far.png */,
 				B5A37A3316390974000A999F /* bg-near.png */,
@@ -868,6 +876,17 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		B5F55DA3164A49650095AEA2 /* Monster */ = {
+			isa = PBXGroup;
+			children = (
+				B5D0D6EE163D8587001080EC /* Monster.h */,
+				B5D0D6EF163D8587001080EC /* Monster.m */,
+				B5F55DA4164A49850095AEA2 /* BBHunter.h */,
+				B5F55DA5164A49850095AEA2 /* BBHunter.m */,
+			);
+			name = Monster;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -935,6 +954,8 @@
 				B5A37A3416390974000A999F /* bg-far.png in Resources */,
 				B5A37A3516390974000A999F /* bg-near.png in Resources */,
 				B5D0D6EC163D8413001080EC /* monster.png in Resources */,
+				B5F55DA2164A48DE0095AEA2 /* hunter.png in Resources */,
+				B5F55DA8164A56A40095AEA2 /* bullet.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1053,6 +1074,7 @@
 				B5D0D6F0163D8587001080EC /* Monster.m in Sources */,
 				B5B35B3B164010F20044AF8E /* BBGameOverScene.m in Sources */,
 				B5B35B3E164013E50044AF8E /* BBPerference.m in Sources */,
+				B5F55DA6164A49850095AEA2 /* BBHunter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

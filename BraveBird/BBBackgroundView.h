@@ -15,4 +15,5 @@
 -(void)initMonsters;
 -(void)refreshMonsters;
 -(void)checkColision:(CCSprite*)player;
+-(void)shotByHunter;
 @end
