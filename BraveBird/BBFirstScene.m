@@ -5,7 +5,7 @@
 
 #import "BBFirstScene.h"
 #import "BBBackgroundView.h"
-
+#import "AppDelegate.h"
 //
 //
 #define PIC_NEARBG              @"bg-near.png"
@@ -26,7 +26,7 @@ static const float a_f=500.0f;//a for up
 static const float g=300.0f;//a for down
 //
 static float dis_forward=20;
-static float race_down=40;
+static float race_down=100;
 static float race_up=60;
 static BOOL keepDown=YES;
 
@@ -92,6 +92,7 @@ static BOOL keepDown=YES;
 #pragma mark--------Timer event
 //keep plaer fly if press
 -(void)keepPlayerFly:(ccTime)delta{
+    if ([self cancleTouch])return;
     CCSprite *player=(CCSprite*)[self getChildByTag:TAG_KEYROLE];
     CGPoint po_player=player.position;
     CGSize sz_player=player.texture.contentSize;
@@ -107,7 +108,6 @@ static BOOL keepDown=YES;
     [player stopAllActions];
     CCMoveTo *cm=[CCMoveTo actionWithDuration:RATE_UPDATE position:po_player];
     [player runAction:cm];
-    
 }
 //keep player down if not press
 -(void)keepPlayerDown:(ccTime)delta{
@@ -194,6 +194,7 @@ static BOOL keepDown=YES;
 //
 #pragma mark---------Touch event
 -(void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    if ([self cancleTouch])return;
     CCLOG(@"touch begin");
     keepDown=NO;
     race_up=0;
@@ -201,11 +202,13 @@ static BOOL keepDown=YES;
 }
 //
 -(void)ccTouchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
+    if ([self cancleTouch])return;
     CCLOG(@"touch move");
     keepDown=NO;
 }
 //
 -(void)ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
+    if ([self cancleTouch])return;
     CCLOG(@"touch end");
     keepDown=YES;
     race_down=0;
@@ -213,10 +216,20 @@ static BOOL keepDown=YES;
 }
 //
 -(void)ccTouchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event{
+    if ([self cancleTouch])return;
     CCLOG(@"touch cancel");
     keepDown=YES;
     race_down=0;
     [self unschedule:@selector(keepPlayerFly:)];
 }
-
+//
+-(BOOL)cancleTouch{
+    if (((AppController*)[UIApplication sharedApplication].delegate).isGameOver) {
+        self.isTouchEnabled=NO;
+        [self unschedule:@selector(keepPlayerFly:)];
+        keepDown=YES;
+        return YES;
+    }
+    return NO;
+}
 @end

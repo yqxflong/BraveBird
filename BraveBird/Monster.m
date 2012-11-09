@@ -8,6 +8,7 @@
 
 #import "Monster.h"
 #import "BBGameOverScene.h"
+#import "AppDelegate.h"
 
 @implementation Monster
 //
@@ -23,6 +24,8 @@
     float dis_real=ccpDistance(m_p,pl_p);
     //
     if (dis_real<=dis_limit) {
+        ((AppController*)[UIApplication sharedApplication].delegate).isGameOver=YES;
+        //
         CCRotateBy *cr=[CCRotateBy actionWithDuration:0.5 angle:990.0];
         CCMoveTo *cm=[CCMoveTo actionWithDuration:0.5 position:CGPointMake(pl_p.x+50,pl_r)];
         CCSpawn *cp=[CCSpawn actions:cr,cm, nil];

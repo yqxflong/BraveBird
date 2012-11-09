@@ -12,6 +12,7 @@
 
 
 @implementation AppController
+@synthesize isGameOver;
 
 @synthesize window=window_, navController=navController_, director=director_;
 

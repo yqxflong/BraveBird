@@ -7,10 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "cocos2d.h"
+#import "Monster.h"
 
-@interface Bullet : CCSprite {
+@interface Bullet : Monster {
     
 }
--(void)checkColision:(CCSprite*)player dis:(float)dis;
+
 @end

@@ -8,6 +8,7 @@
 
 #import "BBGameOverScene.h"
 #import "BBFirstScene.h"
+#import "AppDelegate.h"
 //
 #define TAG_SCORE       10
 
@@ -42,6 +43,7 @@
     //menu
     CCLabelTTF *lb_item_start=[CCLabelTTF labelWithString:MS_ITEM_AGAIN dimensions:item_dimensions hAlignment:kCCTextAlignmentCenter fontName:@"Marker Felt" fontSize:FS_ITEM_START];
     CCMenuItem *item_start=[CCMenuItemLabel itemWithLabel:lb_item_start block:^(id sender){
+        ((AppController*)[UIApplication sharedApplication].delegate).isGameOver=NO;
         CCTransitionSplitCols *tr=[CCTransitionSplitCols transitionWithDuration:3 scene:[BBFirstScene scene]];
         [[CCDirector sharedDirector]replaceScene:tr];
     }];
