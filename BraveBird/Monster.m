@@ -24,7 +24,8 @@
     float dis_real=ccpDistance(m_p,pl_p);
     //
     if (dis_real<=dis_limit) {
-        ((AppController*)[UIApplication sharedApplication].delegate).isGameOver=YES;
+        [BBPerference instance].isGameOver=YES;
+        [[BBPerference instance]recordScore];
         //
         CCRotateBy *cr=[CCRotateBy actionWithDuration:0.5 angle:990.0];
         CCMoveTo *cm=[CCMoveTo actionWithDuration:0.5 position:CGPointMake(pl_p.x+50,pl_r)];
@@ -33,9 +34,29 @@
             CCScene* go=[BBGameOverScene scene];
             [[CCDirector sharedDirector]replaceScene:go];
         }];
+        [self runEffect:player];
         [player runAction:cp];
         [player performSelector:@selector(runAction:) withObject:ca afterDelay:1];
     }
 }
 //
+-(void)runEffect:(CCSprite*)player{
+    [player removeChildByTag:1 cleanup:YES];
+    
+    CCParticleSystem *sys=[CCParticleFire node];
+    //
+    sys.emitterMode=kCCParticleModeGravity;
+    sys.gravity=player.position;
+    sys.speed=15;
+    sys.position=CGPointZero;
+    sys.positionType=kCCPositionTypeRelative;
+    sys.startSize=20.0f;
+    sys.endSize=kCCParticleStartSizeEqualToEndSize;
+    sys.life=5.0f;
+    sys.lifeVar=1.0f;
+    sys.totalParticles=200;
+    //
+    sys.texture=[[CCTextureCache sharedTextureCache]addImage:@"fire.png"];
+    [player addChild:sys z:1 tag:1];
+}
 @end

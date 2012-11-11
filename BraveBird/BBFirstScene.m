@@ -224,7 +224,7 @@ static BOOL keepDown=YES;
 }
 //
 -(BOOL)cancleTouch{
-    if (((AppController*)[UIApplication sharedApplication].delegate).isGameOver) {
+    if ([BBPerference instance].isGameOver) {
         self.isTouchEnabled=NO;
         [self unschedule:@selector(keepPlayerFly:)];
         keepDown=YES;

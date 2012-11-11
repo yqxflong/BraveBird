@@ -14,7 +14,7 @@
 #define PIC_MONSTER     @"monster.png"
 #define PIC_HUNTER      @"hunter.png"
 #define PIC_BULLET      @"bullet.png"
-#define COUNT_MONSTER       1
+#define COUNT_MONSTER       5
 //
 #define TAG_HUNTER      200
 #define TAG_BULLET      201

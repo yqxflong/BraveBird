@@ -9,6 +9,10 @@
 #import <Foundation/Foundation.h>
 
 @interface BBPerference : NSObject
+@property (nonatomic,copy)NSString * name;
 @property float score;
+@property BOOL isGameOver;
 +(BBPerference*)instance;
+-(void)recordScore;
+-(NSDictionary*)scoreList;
 @end

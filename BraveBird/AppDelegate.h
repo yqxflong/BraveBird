@@ -20,6 +20,6 @@
 @property (nonatomic, retain) UIWindow *window;
 @property (readonly) UINavigationController *navController;
 @property (readonly) CCDirectorIOS *director;
-@property BOOL isGameOver;
+
 
 @end
