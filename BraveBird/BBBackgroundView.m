@@ -25,6 +25,11 @@
 //
 @implementation BBBackgroundView
 //
+static int monsterArr[16][2]={{530,590},{655,590},{780,590},{905,590},
+    {530,445},{655,445},{780,445},{905,445},
+    {530,310},{655,310},{780,310},{905,310},
+    {530,175},{655,175},{780,175},{905,175}};
+//
 static const float bullet_race=20;
 static CGRect hr;
 -(void)initMonsters{
@@ -49,16 +54,13 @@ static CGRect hr;
         NSAssert([node isKindOfClass:[Monster class]],@"not a monster!!");
         Monster *m=(Monster*)node;
         CGPoint p=[self getMonsterPoint:m.contentSize];
-        p.x=p.x<WINSIZE.width/2?WINSIZE.width/2:p.x;
-        p.y=p.y<WINSIZE.height/2?WINSIZE.height/2:p.y;
         [m setPosition:p];
     }
 }
 //
 -(CGPoint)getMonsterPoint:(CGSize)sz_m{
-    float m_y=CCRANDOM_0_1()*(WINSIZE.height-sz_m.height)+sz_m.height*0.5;
-    float m_x=CCRANDOM_0_1()*(WINSIZE.width-sz_m.width)+sz_m.width*0.5;
-    return CGPointMake(m_x, m_y);
+    int rand=(int)(CCRANDOM_0_1()*16)%16;
+    return CGPointMake(monsterArr[rand][0]/2,monsterArr[rand][1]/2);
 }
 //
 -(void)checkColision:(CCSprite*)player{
