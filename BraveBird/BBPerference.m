@@ -32,9 +32,12 @@ static BBPerference *instance=nil;
     if ([dic count]==0){
         dic=[NSMutableDictionary dictionary];
     }
-    NSString *s=[NSString stringWithFormat:@"%.1f",score];
-    [dic setValue:s forKey:name];
-    [dic writeToFile:SCORELIST atomically:YES];
+    NSString *lastscore=[dic objectForKey:name];
+    if ([lastscore floatValue]<score) {
+        NSString *s=[NSString stringWithFormat:@"%.1f",score];
+        [dic setValue:s forKey:name];
+        [dic writeToFile:SCORELIST atomically:YES];
+    }
 }
 //
 -(NSDictionary*)scoreList{
