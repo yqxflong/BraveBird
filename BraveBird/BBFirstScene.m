@@ -51,11 +51,11 @@ static BOOL keepDown=YES;
 //
 -(void)initBackgroundView{
     BBBackgroundView *near=[BBBackgroundView spriteWithFile:PIC_NEARBG];
-    [near setColor:ccBLACK];
+//    [near setColor:ccBLACK];
     [self addChild:near z:-1 tag:TAG_NEARBG];
     //
     BBBackgroundView *far=[BBBackgroundView spriteWithFile:PIC_FARBG];
-    [far setColor:ccBLACK];
+//    [far setColor:ccBLACK];
     [self addChild:far z:-1 tag:TAG_FARBG];
     //
     CGPoint po_near=CGPointMake(WINSIZE.width/2,WINSIZE.height/2);
