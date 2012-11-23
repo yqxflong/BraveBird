@@ -142,6 +142,8 @@
 		B5A37A3416390974000A999F /* bg-far.png in Resources */ = {isa = PBXBuildFile; fileRef = B5A37A3216390974000A999F /* bg-far.png */; };
 		B5A37A3516390974000A999F /* bg-near.png in Resources */ = {isa = PBXBuildFile; fileRef = B5A37A3316390974000A999F /* bg-near.png */; };
 		B5A7CF17164CFFB800A49FC9 /* BBFlighter.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A7CF16164CFFB800A49FC9 /* BBFlighter.m */; };
+		B5AF65F5165F278E00DA8C32 /* Gun.wav in Resources */ = {isa = PBXBuildFile; fileRef = B5AF65F4165F278E00DA8C32 /* Gun.wav */; };
+		B5AF65F7165F2A2700DA8C32 /* explosion2.wav in Resources */ = {isa = PBXBuildFile; fileRef = B5AF65F6165F2A2700DA8C32 /* explosion2.wav */; };
 		B5B35B3B164010F20044AF8E /* BBGameOverScene.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B35B3A164010F20044AF8E /* BBGameOverScene.m */; };
 		B5B35B3E164013E50044AF8E /* BBPerference.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B35B3D164013E50044AF8E /* BBPerference.m */; };
 		B5D0D6EC163D8413001080EC /* monster.png in Resources */ = {isa = PBXBuildFile; fileRef = B5D0D6EB163D8413001080EC /* monster.png */; };
@@ -431,6 +433,8 @@
 		B5A774BF16389DEE0042163D /* config_Fun.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = config_Fun.h; sourceTree = "<group>"; };
 		B5A7CF15164CFFB800A49FC9 /* BBFlighter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBFlighter.h; sourceTree = "<group>"; };
 		B5A7CF16164CFFB800A49FC9 /* BBFlighter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBFlighter.m; sourceTree = "<group>"; };
+		B5AF65F4165F278E00DA8C32 /* Gun.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Gun.wav; path = Resources/Gun.wav; sourceTree = "<group>"; };
+		B5AF65F6165F2A2700DA8C32 /* explosion2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = explosion2.wav; path = Resources/explosion2.wav; sourceTree = "<group>"; };
 		B5B35B39164010F20044AF8E /* BBGameOverScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBGameOverScene.h; sourceTree = "<group>"; };
 		B5B35B3A164010F20044AF8E /* BBGameOverScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBGameOverScene.m; sourceTree = "<group>"; };
 		B5B35B3C164013E40044AF8E /* BBPerference.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBPerference.h; sourceTree = "<group>"; };
@@ -528,6 +532,7 @@
 		B53BE8F31637C180002C4F36 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B5AF65F2165F278200DA8C32 /* sound */,
 				B50FF5A9164F69CF00E83074 /* fire.png */,
 				B5F55DA7164A56A40095AEA2 /* bullet.png */,
 				B5F55DA1164A48DE0095AEA2 /* hunter.png */,
@@ -908,6 +913,15 @@
 			name = Static;
 			sourceTree = "<group>";
 		};
+		B5AF65F2165F278200DA8C32 /* sound */ = {
+			isa = PBXGroup;
+			children = (
+				B5AF65F4165F278E00DA8C32 /* Gun.wav */,
+				B5AF65F6165F2A2700DA8C32 /* explosion2.wav */,
+			);
+			name = sound;
+			sourceTree = "<group>";
+		};
 		B5F55DA3164A49650095AEA2 /* Monster */ = {
 			isa = PBXGroup;
 			children = (
@@ -993,6 +1007,8 @@
 				B5F55DA2164A48DE0095AEA2 /* hunter.png in Resources */,
 				B5F55DA8164A56A40095AEA2 /* bullet.png in Resources */,
 				B50FF5AA164F69CF00E83074 /* fire.png in Resources */,
+				B5AF65F5165F278E00DA8C32 /* Gun.wav in Resources */,
+				B5AF65F7165F2A2700DA8C32 /* explosion2.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1127,7 +1143,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Zhen Lv";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -1139,6 +1155,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				PROVISIONING_PROFILE = "0084D0D7-E7D4-49F1-A5FC-06519FE2513C";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1148,7 +1165,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Zhen Lv";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					NDEBUG,
@@ -1158,6 +1175,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				PROVISIONING_PROFILE = "0084D0D7-E7D4-49F1-A5FC-06519FE2513C";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1167,6 +1185,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Zhen Lv";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1179,6 +1198,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "0084D0D7-E7D4-49F1-A5FC-06519FE2513C";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1187,6 +1207,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Zhen Lv";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = BraveBird/Prefix.pch;
@@ -1198,6 +1219,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "0084D0D7-E7D4-49F1-A5FC-06519FE2513C";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};

@@ -6,6 +6,10 @@
 //  Copyright 2012 __MyCompanyName__. All rights reserved.
 //
 
+
+#define FN_SOUND_DIE        @"explosion2.wav"
+
+///
 #import "Monster.h"
 #import "BBGameOverScene.h"
 #import "AppDelegate.h"
@@ -13,6 +17,7 @@
 @implementation Monster
 //
 -(void)checkColision:(CCSprite*)player dis:(float)dis{
+    if ([BBPerference instance].isGameOver)return;
     float pl_r=player.contentSize.height/2;
     CGPoint pl_p=player.position;
     CGSize m_sz=self.contentSize;
@@ -24,7 +29,6 @@
     float dis_real=ccpDistance(m_p,pl_p);
     //
     if (dis_real<=dis_limit) {
-        [BBPerference instance].isGameOver=YES;
         [[BBPerference instance]recordScore];
         //
         CCRotateBy *cr=[CCRotateBy actionWithDuration:0.5 angle:990.0];
@@ -37,6 +41,7 @@
         [self runEffect:player];
         [player runAction:cp];
         [player performSelector:@selector(runAction:) withObject:ca afterDelay:1];
+        [BBPerference instance].isGameOver=YES;
     }
 }
 //
@@ -58,5 +63,6 @@
     //
     sys.texture=[[CCTextureCache sharedTextureCache]addImage:@"fire.png"];
     [player addChild:sys z:1 tag:1];
+    [[CDAudioManager sharedManager] playBackgroundMusic:FN_SOUND_DIE loop:NO];
 }
 @end

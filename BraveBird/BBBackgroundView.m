@@ -11,6 +11,8 @@
 #import "BBHunter.h"
 #import "Bullet.h"
 //
+#define SOUND_BULLET    @"Gun.wav"
+//
 #define PIC_MONSTER     @"monster.png"
 #define PIC_HUNTER      @"hunter.png"
 #define PIC_BULLET      @"bullet.png"
@@ -85,11 +87,10 @@ static CGRect hr;
 -(void)initBullet{
     CCNode *node=[self getChildByTag:TAG_HUNTER];
     NSAssert([node isKindOfClass:[BBHunter class]],@"not a hunter!!");
-    BBHunter *m=(BBHunter*)node;
     //hunter emit bullet
     Bullet *bullet=[Bullet spriteWithFile:PIC_BULLET];
-    bullet.position=m.position;
     [self addChild:bullet z:0 tag:TAG_BULLET];
+    [bullet setPosition:ccp(-50, -50)];
 }
 //
 -(void)resetBullet{
@@ -101,6 +102,7 @@ static CGRect hr;
     NSAssert([n isKindOfClass:[Bullet class]],@"not a bullet!!");
     Bullet *b=(Bullet*)n;
     b.position=m.position;
+    [[CDAudioManager sharedManager]playBackgroundMusic:SOUND_BULLET loop:NO];
 }
 //
 -(void)updateBullet:(CCSprite*)pl dis:(float)dis{

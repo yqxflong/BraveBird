@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "BraveBird/Monster.m"
-         timestampString = "374304738.017065"
+         timestampString = "375335854.143142"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "44"
-         endingLineNumber = "44"
+         startingLineNumber = "49"
+         endingLineNumber = "49"
          landmarkName = "-runEffect:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -27,19 +27,6 @@
          startingLineNumber = "61"
          endingLineNumber = "61"
          landmarkName = "-initBackgroundView"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "BraveBird/BBBackgroundView.m"
-         timestampString = "374401789.444156"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "56"
-         endingLineNumber = "56"
-         landmarkName = "-refreshMonsters"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
