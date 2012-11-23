@@ -9,7 +9,7 @@
 #import "BBPerference.h"
 
 #define SCORELIST       [NSString stringWithFormat:@"%@/Documents/scorelist.plist",NSHomeDirectory()]
-
+#define kName           @"perfer_name"
 @implementation BBPerference
 @synthesize name;
 @synthesize score;
@@ -32,10 +32,10 @@ static BBPerference *instance=nil;
     if ([dic count]==0){
         dic=[NSMutableDictionary dictionary];
     }
-    NSString *lastscore=[dic objectForKey:name];
+    NSString *lastscore=[dic objectForKey:self.name];
     if ([lastscore floatValue]<score) {
         NSString *s=[NSString stringWithFormat:@"%.1f",score];
-        [dic setValue:s forKey:name];
+        [dic setValue:s forKey:self.name];
         [dic writeToFile:SCORELIST atomically:YES];
     }
 }
@@ -43,5 +43,15 @@ static BBPerference *instance=nil;
 -(NSDictionary*)scoreList{
     NSDictionary *dic=[NSDictionary dictionaryWithContentsOfFile:SCORELIST];
     return dic;
+}
+//
+#define mark--          setter()
+-(void)setName:(NSString *)name{
+    [[NSUserDefaults standardUserDefaults]setObject:name forKey:kName];
+    [[NSUserDefaults standardUserDefaults]synchronize];
+}
+//
+-(NSString*)name{
+    return [[NSUserDefaults standardUserDefaults]objectForKey:kName];
 }
 @end

@@ -11,15 +11,16 @@
 #import "BBHunter.h"
 #import "Bullet.h"
 //
-#define SOUND_BULLET    @"Gun.wav"
+#define SOUND_BULLET    @"Laser.wav"
 //
 #define PIC_MONSTER     @"monster.png"
 #define PIC_HUNTER      @"hunter.png"
 #define PIC_BULLET      @"bullet.png"
-#define COUNT_MONSTER       5
+#define COUNT_MONSTER       4
 //
 #define TAG_HUNTER      200
 #define TAG_BULLET      201
+#define TAG_BATCHNODE    50
 //
 @interface BBBackgroundView()
 -(CGPoint)getMonsterPoint:(CGSize)sz_m;
@@ -36,9 +37,11 @@ static const float bullet_race=20;
 static CGRect hr;
 -(void)initMonsters{
     //fly monster
-    for (int i=0; i<COUNT_MONSTER;i++) {
-        Monster *m=[Monster spriteWithFile:PIC_MONSTER];
-        [self addChild:m z:1 tag:i];
+    CCSpriteBatchNode *bn=[CCSpriteBatchNode batchNodeWithFile:PIC_MONSTER];
+    [self addChild:bn z:1 tag:TAG_BATCHNODE];
+    for (int i=0; i<COUNT_MONSTER; i++) {
+        Monster *fly=[Monster spriteWithFile:PIC_MONSTER];
+        [bn addChild:fly z:2 tag:i];
     }
     [self refreshMonsters];
     //hunter
@@ -51,8 +54,11 @@ static CGRect hr;
 }
 //
 -(void)refreshMonsters{
+    CCNode *node=[self getChildByTag:TAG_BATCHNODE];
+    NSAssert([node isKindOfClass:[CCSpriteBatchNode class]],@"not a monster!!");
+    CCSpriteBatchNode *bn=(CCSpriteBatchNode*)node;
     for (int i=0; i<COUNT_MONSTER;i++) {
-        CCNode *node=[self getChildByTag:i];
+        CCNode *node=[bn getChildByTag:i];
         NSAssert([node isKindOfClass:[Monster class]],@"not a monster!!");
         Monster *m=(Monster*)node;
         CGPoint p=[self getMonsterPoint:m.contentSize];
@@ -67,17 +73,20 @@ static CGRect hr;
 //
 -(void)checkColision:(CCSprite*)player{
     //check fly monster colision
-    for (int i=0; i<COUNT_MONSTER;i++){
-        CCNode *node=[self getChildByTag:i];
+    CCNode *node=[self getChildByTag:TAG_BATCHNODE];
+    NSAssert([node isKindOfClass:[CCSpriteBatchNode class]],@"not a monster!!");
+    CCSpriteBatchNode *bn=(CCSpriteBatchNode*)node;
+    for (int i=0; i<COUNT_MONSTER;i++) {
+        CCNode *node=[bn getChildByTag:i];
         NSAssert([node isKindOfClass:[Monster class]],@"not a monster!!");
         Monster *m=(Monster*)node;
         float dis=self.position.x-WINSIZE.width/2;
         [m checkColision:player dis:dis];
     }
     //check hunter colision
-    CCNode *node=[self getChildByTag:TAG_HUNTER];
-    NSAssert([node isKindOfClass:[BBHunter class]],@"not a hunter!!");
-    BBHunter *m=(BBHunter*)node;
+    CCNode *n=[self getChildByTag:TAG_HUNTER];
+    NSAssert([n isKindOfClass:[BBHunter class]],@"not a hunter!!");
+    BBHunter *m=(BBHunter*)n;
     float dis=self.position.x-WINSIZE.width/2;
     [m checkColision:player dis:dis];
     //

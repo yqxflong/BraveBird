@@ -33,7 +33,7 @@
     tf.textAlignment=UITextAlignmentCenter;
     tf.returnKeyType=UIReturnKeyDone;
     tf.borderStyle=UITextBorderStyleBezel;
-    tf.text=@"Jack";
+    tf.text=[BBPerference instance].name?[BBPerference instance].name:@"Jack";
     [[[CCDirector sharedDirector]view]addSubview:tf];
     [tf release];
 }

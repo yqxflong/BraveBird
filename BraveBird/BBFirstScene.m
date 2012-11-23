@@ -19,15 +19,18 @@
 //
 #define RATE_UPDATE             0.1f
 #define PLAYER_START_X          100
+
+#define RD          30
+#define RU          20
 //
 //
 //
-static const float a_f=500.0f;//a for up
-static const float g=300.0f;//a for down
+static const float a_f=300.0f;//a for up
+static const float g=200.0f;//a for down
 //
 static float dis_forward=20;
-static float race_down=100;
-static float race_up=60;
+static float race_down=RD;
+static float race_up=RU;
 static BOOL keepDown=YES;
 
 @implementation BBFirstScene
@@ -101,7 +104,7 @@ static BOOL keepDown=YES;
         race_up+=a_f*delta;
         po_player.y+=race_up*delta;
     }else{
-        race_up=0;
+        race_up=RU;
         po_player.y=WINSIZE.height-sz_player.height/2;
     }
     //
@@ -120,7 +123,7 @@ static BOOL keepDown=YES;
         race_down+=g*delta;
         po_player.y-=race_down*delta;
     }else{
-        race_down=0;
+        race_down=RD;
         po_player.y=sz_player.height/2;
     }
     [player stopAllActions];
@@ -197,7 +200,7 @@ static BOOL keepDown=YES;
     if ([self cancleTouch])return;
     CCLOG(@"touch begin");
     keepDown=NO;
-    race_up=0;
+    race_up=RU;
     [self schedule:@selector(keepPlayerFly:) interval:RATE_UPDATE];
 }
 //
@@ -210,16 +213,16 @@ static BOOL keepDown=YES;
 -(void)ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
     if ([self cancleTouch])return;
     CCLOG(@"touch end");
+    race_down=RD;
     keepDown=YES;
-    race_down=0;
     [self unschedule:@selector(keepPlayerFly:)];
 }
 //
 -(void)ccTouchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event{
     if ([self cancleTouch])return;
     CCLOG(@"touch cancel");
+    race_down=RD;
     keepDown=YES;
-    race_down=0;
     [self unschedule:@selector(keepPlayerFly:)];
 }
 //

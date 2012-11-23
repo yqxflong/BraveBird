@@ -7,26 +7,52 @@
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "BraveBird/Monster.m"
-         timestampString = "375335854.143142"
+         filePath = "BraveBird/BBFirstScene.m"
+         timestampString = "375346421.80191"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "49"
-         endingLineNumber = "49"
-         landmarkName = "-runEffect:"
+         startingLineNumber = "64"
+         endingLineNumber = "64"
+         landmarkName = "-initBackgroundView"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "BraveBird/BBFirstScene.m"
-         timestampString = "374318198.139102"
+         filePath = "BraveBird/Monster.m"
+         timestampString = "375345918.2988"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "61"
-         endingLineNumber = "61"
-         landmarkName = "-initBackgroundView"
+         startingLineNumber = "20"
+         endingLineNumber = "20"
+         landmarkName = "-checkColision:dis:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "BraveBird/Monster.m"
+         timestampString = "375345989.409065"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "32"
+         endingLineNumber = "32"
+         landmarkName = "-checkColision:dis:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "BraveBird/BBBackgroundView.m"
+         timestampString = "375347524.787065"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "40"
+         endingLineNumber = "40"
+         landmarkName = "-initMonsters"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

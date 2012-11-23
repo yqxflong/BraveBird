@@ -3,6 +3,8 @@
 //  BraveBird
 //
 
+#define FN_START        @"Gun.wav"
+//
 #import "MainScreen.h"
 #import "BBFirstScene.h"
 //
@@ -38,6 +40,7 @@
     //menu
     CCLabelTTF *lb_item_start=[CCLabelTTF labelWithString:MS_ITEM_START dimensions:item_dimensions hAlignment:kCCTextAlignmentCenter fontName:@"Marker Felt" fontSize:FS_ITEM_START];
     CCMenuItem *item_start=[CCMenuItemLabel itemWithLabel:lb_item_start block:^(id sender){
+        [[CDAudioManager sharedManager]playBackgroundMusic:FN_START loop:NO];
         CCTransitionSplitCols *tr=[CCTransitionSplitCols transitionWithDuration:3 scene:[BBFirstScene scene]];
         [[CCDirector sharedDirector]replaceScene:tr];
     }];
